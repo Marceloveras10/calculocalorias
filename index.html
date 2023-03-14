@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Calculadora de Calorias</title>
+  </head>
+  <body>
+    <h1>Calculadora de Calorias</h1>
+    <form>
+      <fieldset>
+        <legend>Escolha seu prato:</legend>
+        <label>
+          <input type="radio" name="prato" value="180" checked> Vegetariano (180 cal)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="prato" value="280"> Peixe (280 cal)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="prato" value="250"> Frango (250 cal)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="prato" value="350"> Carne (350 cal)
+        </label>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Escolha sua sobremesa:</legend>
+        <label>
+          <input type="radio" name="sobremesa" value="50" checked> Abacaxi (50 cal)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="sobremesa" value="110"> Sorvete diet (110 cal)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="sobremesa" value="170"> Mousse diet (170 cal)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="sobremesa" value="200"> Mousse chocolate (200 cal)
+        </label>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend>Escolha sua bebida:</legend>
+        <label>
+          <input type="radio" name="bebida" value="20" checked> Chá (20 cal)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="bebida" value="70"> Suco de laranja (70 cal)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="bebida" value="100"> Suco de melão (100 cal)
+        </label>
+        <br>
+        <label>
+          <input type="radio" name="bebida" value="65"> Refrigerante diet (65 cal)
+        </label>
+      </fieldset>
+      <br>
+      <input type="button" value="Calcular" onclick="calcularCalorias()">
+    </form>
+    <br>
+    <p id="totalCalorias"></p>
+    <script>
+      function calcularCalorias() {
+        const prato = Number(document.querySelector('input[name="prato"]:checked').value);
+        const sobremesa = Number(document.querySelector('input[name="sobremesa"]:checked').value);
+        const bebida = Number(document.querySelector('input[name="bebida"]:checked').value);
+        const totalCalorias = prato + sobremesa + bebida;
+        document.getElementById("totalCalorias").innerHTML = `A quantidade total de calorias da refeição é ${totalCalorias} calorias.`;
+      }
+    </script>
+  </body>
+</html>
